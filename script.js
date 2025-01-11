@@ -12,14 +12,14 @@ document.getElementById("wifi-form").addEventListener("submit", function (e) {
     }
 
     const qrCodeContainer = document.getElementById("qrcode");
-    qrCodeContainer.innerHTML = ""; // Clear previous QR code
+    qrCodeContainer.innerHTML = ""; 
 
     QRCode.toCanvas(qrData, { errorCorrectionLevel: 'H' }, function (error, canvas) {
         if (error) {
             alert("Error generating QR Code: " + error);
             return;
         }
-        qrCodeContainer.appendChild(canvas); // Add the canvas to the container
+        qrCodeContainer.appendChild(canvas); 
         document.getElementById("qr-container").classList.remove("hidden");
     });
 });
